@@ -11,6 +11,8 @@ import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { VehicleFormComponent } from './vehicle-form/vehicle-form.component';
 import { CustomerFormComponent } from './customer-form/customer-form.component';
+import { EmployeeFormComponent } from './employee-form/employee-form.component';
+import { ViewModule } from './view/view.module';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import { CustomerFormComponent } from './customer-form/customer-form.component';
     CounterComponent,
     FetchDataComponent,
     VehicleFormComponent,
-    CustomerFormComponent
+    CustomerFormComponent,
+    EmployeeFormComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -32,7 +35,9 @@ import { CustomerFormComponent } from './customer-form/customer-form.component';
       { path: 'fetch-data', component: FetchDataComponent },
       { path: 'vehicles/new', component: VehicleFormComponent },
       { path: 'customer/new', component: CustomerFormComponent },
-    ])
+      { path: 'employee/new', component: EmployeeFormComponent },
+    ]),
+    ViewModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
